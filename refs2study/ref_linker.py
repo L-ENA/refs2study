@@ -9,9 +9,9 @@ class RefLinker:
         clusters: dict[str, list[str]] = {}
         for reference in references:
             key_parts = [
-                reference.originalTitle.strip().lower(),
-                reference.journalName.strip().lower(),
-                reference.date.strip().lower(),
+                (reference.originalTitle or "").strip().lower(),
+                (reference.journalName or "").strip().lower(),
+                (reference.date or "").strip().lower(),
             ]
             cluster_key = "|".join(key_parts).strip("|") or reference.reference_id
             clusters.setdefault(cluster_key, []).append(reference.reference_id)
