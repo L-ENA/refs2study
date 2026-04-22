@@ -3,6 +3,7 @@ from __future__ import annotations
 from itertools import combinations
 from typing import Iterable
 
+# Mirrors the dedupe-style evaluation example where "x" marks rows without a usable cluster label.
 IGNORED_STUDY_IDS = {"x"}
 
 
